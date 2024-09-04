@@ -1,6 +1,6 @@
 {
   "name": "placidcurtain",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@supabase/supabase-js": "^2.45.3",
     "bootstrap": "^5.3.3",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
