@@ -1,16 +1,16 @@
 // Import our custom CSS
 import "./scss/styles.scss";
-import "./assets/main.css";
-
-// Import all of Bootstrap's JS
-import * as bootstrap from "bootstrap";
 
 import { createApp } from "vue";
+import { createPinia } from "pinia";
+
 import App from "./App.vue";
 import router from "./router";
 
+const pinia = createPinia();
 const app = createApp(App);
 
 app.use(router);
+app.use(pinia);
 
 app.mount("#app");
