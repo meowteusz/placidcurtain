@@ -51,7 +51,12 @@ const router = createRouter({
 router.beforeEach(async (to, from) => {
   // Only enter conditional if the page needs auth
   if (to.meta.requiresAuth) {
-    const { data: { user } } = await supabase.auth.getUser();
+    const { data: { user }, error } = await supabase.auth.getUser();
+
+    // If this returns an error we are logged out
+    if (error) {
+      return { name: "student-login" };
+    }
 
     if (user.aud !== "authenticated") {
       switch (from.name) {
